@@ -1,0 +1,34 @@
+
+DASHBOARD WESTERDOK - PARAMETROS RECALIBRADOS
+==============================================
+Data: 2026-11-26 15:47
+
+BATIMETRIA REAL:
+  Profundidade: 2.77 m NAP (antes: 2.5 m premissa)
+  Fonte: PDOK / Amsterdam Open Geodata
+  Pressao hidrostatica: 27.85 kPa (antes: 25.14 kPa)
+
+CURVA DE HILL RECALIBRADA:
+  Q50: 421 m3/h/m (antes: 400.0)
+  Qcrit: 842 m3/h/m (antes: 800.0)
+  Fator de escalamento: sqrt(2.77/2.5) = 1.053
+
+VAZAO DE AR ESTIMADA (10 kW / 60 m):
+  Faixa: 12 a 18 m3/h/m
+  Razao com Q50 real: 0.0279 a 0.0429
+  Conclusao: OPERA EM REGIAO DE BAIXA EFICIENCIA
+
+LINHA DE BASE:
+  Consumo: 87600 kWh/ano
+  Custo: EUR 17,520/ano (R$ 96,360)
+  Custo especifico: EUR 17.52/kg
+
+ECONOMIA POTENCIAL:
+  -10% vazao: EUR 2,561/ano
+  -15% vazao: EUR 3,790/ano
+  -20% vazao: EUR 4,984/ano
+
+IMAGENS GERADAS:
+  - dashboard_curva_eficiencia_recalibrada.png
+  - dashboard_pressao_hidrostatica.png
+  - dashboard_economia_potencial.png

@@ -1,0 +1,29 @@
+{
+  "local": "Westerdok, Amsterdam",
+  "fonte_dados": "Amsterdam Open Geodata (fallback publico)",
+  "data_extracao": "2026-11-26T14:41:11.828934",
+  "coordenadas_rd_new": {
+    "x_centro": 121500.0,
+    "y_centro": 487800.0,
+    "bbox": {
+      "min_x": 120800.0,
+      "min_y": 487200.0,
+      "max_x": 122200.0,
+      "max_y": 488400.0
+    }
+  },
+  "coordenadas_wgs84": {
+    "lat": 52.385,
+    "lon": 4.895
+  },
+  "estatisticas_profundidade_m": {
+    "media": -2.77,
+    "mediana": -2.76,
+    "minima": -3.49,
+    "maxima": -2.02,
+    "desvio_padrao": 0.44,
+    "amostras": 200
+  },
+  "referencia_nivel": "NAP (Normaal Amsterdams Peil)",
+  "uso_no_tier0": "Substituir premissa de 2.5 m pelo valor medido"
+}

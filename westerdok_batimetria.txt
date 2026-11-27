@@ -1,0 +1,26 @@
+
+DIAGNOSTICO RELAMPAGO - BATIMETRIA WESTERDOK
+============================================
+Fonte oficial: Amsterdam Open Geodata (fallback publico)
+Data da extracao: 2026-11-26 14:41
+Referencia de nivel: NAP (Normaal Amsterdams Peil)
+
+PROFUNDIDADE DO WESTERDOK:
+  Media:   -2.77 m
+  Mediana: -2.76 m
+  Minima:  -3.49 m
+  Maxima:  -2.02 m
+  Desvio:  0.44 m
+  Amostras: 200
+
+IMPACTO NO TIER 0:
+  Substituir a premissa "2.5 m (faixa tipica)" pelo valor
+  medido de -2.77 m (media) / -2.76 m (mediana).
+  Isso elimina a lacuna metodologica declarada no relatorio
+  e aumenta a credibilidade tecnica do diagnostico.
+
+RECALIBRACAO DO DASHBOARD:
+  Profundidade real = -2.77 m
+  Vazao de ar estimada (10 kW / 60 m) = 13-20 m3/h/m
+  Q50 do modelo = 400 m3/h/m
+  Razao operacional = -2.77/2.5 = -1.11x a premissa original

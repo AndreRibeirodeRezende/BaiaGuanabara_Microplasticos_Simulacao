@@ -1,0 +1,44 @@
+
++--------------------------------------------------------------------------+
+|  DIAGNOSTICO RELAMPAGO v2 - Bubble Barrier Westerdok                     |
+|  O que os dados publicos (AGORA com batimetria real) dizem               |
++--------------------------------------------------------------------------+
+
+TRES NUMEROS
+
+  ~87600 kWh/ano      Consumo do compressor (~10 kW x 8.760 h)
+  ~17.5 kWh/kg        Energia por kg de plastico (~1 t/ano)
+  ~EUR 17.52/kg        Custo de eletricidade (23% do TCO de EUR 76.45/kg)
+
+NOVIDADE: Batimetria real = 2.77 m NAP (PDOK/Amsterdam Open Geodata)
+          (Antes: 2.5 m premissa - lacuna metodologica eliminada)
+
+UMA DESCOBERTA (REFORCADA)
+
+  O modelo do dashboard foi calibrado para barreiras de grande porte
+  (Q50 = 400.0 m3/h/m). Com H = 2.77 m, a engenharia reversa da
+  potencia de 10 kW estima vazao de ~12-18 m3/h/m -
+  UMA ORDEM DE GRANDEZA abaixo do Q50.
+
+  >>> A discrepancia e MAIOR do que estimada antes.
+  >>> O potencial de otimizacao e REAL.
+
+TRES PERGUNTAS
+
+  1. Qual e a vazao de ar real (Qa) por metro de cortina?
+  2. A curva potencia x vazao coincide com a de placa?
+  3. A profundidade local varia com a mare?
+
+SE FAZER SENTIDO
+
+  1 semana de medicao leve (potencia, vazao, pressao) transforma estas
+  estimativas em numeros verificaveis (ISO 50015 / IPMVP Opcao B).
+
+  Sem instrumentacao permanente, sem NDA, sem compromisso.
+
+Referencias: WUR/edepot, Waternet/Tauw (2023), TGBB (2024), HarmoniQ (2025),
+             PDOK, Amsterdam Open Geodata, Rodrigues et al. (2026),
+             Rosman et al. (2024), Carvalho et al. (2003).
+
+Contato: Andre Ribeiro de Rezende | Pesquisador Independente | 2026
++--------------------------------------------------------------------------+

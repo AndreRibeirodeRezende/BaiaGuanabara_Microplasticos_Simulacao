@@ -1,0 +1,151 @@
+
+================================================================================
+DIAGNOSTICO RELAMPAGO v2 - BUBBLE BARRIER WESTERDOK
+Tier 0: Dados Publicos + Batimetria Real (PDOK/Amsterdam Open Geodata)
+================================================================================
+
+Autor: Andre Ribeiro de Rezende
+Instituicao: Pesquisador Independente
+Data: 26/11/2026
+Versao: 2.0 (com batimetria medida)
+
+================================================================================
+RESUMO EXECUTIVO
+================================================================================
+
+A barreira de bolhas de Westerdok opera com um compressor de ~10 kW continuos,
+consumindo aproximadamente 87600 kWh/ano. Com captura anual de ~1.000 kg
+de plastico, o consumo especifico e de 17.5 kWh/kg.
+
+NOVIDADE DESTA VERSAO: A profundidade do canal foi medida via dados publicos
+do PDOK (Publieke Dienstverlening Op de Kaart) e Amsterdam Open Geodata:
+
+  Profundidade real: 2.77 m NAP (Normaal Amsterdams Peil)
+  (Anteriormente estimada como 2.5 m - faixa tipica)
+
+Isso elimina a lacuna metodologica declarada no Tier 0 original e ancora o
+diagnostico em dado auditavel do governo holandes.
+
+================================================================================
+1. DADOS PUBLICOS UTILIZADOS
+================================================================================
+
+| Parametro              | Valor          | Fonte                              |
+|------------------------|----------------|------------------------------------|
+| Potencia compressor    | ~10 kW cont.   | WUR/edepot                         |
+| Captura anual          | ~1.000 kg/ano  | Waternet/Tauw (2023); TGBB (2024)  |
+| Eficiencia captura     | 86%            | TGBB; Holland Circular Hotspot     |
+| Comprimento cortina    | 60 m           | Greentek Solutions                 |
+| PROFUNDIDADE REAL      | 2.77 m NAP | PDOK / Amsterdam Open Geodata      |
+| Pressao hidrostatica   | 27.85 kPa| Calculado (rho=1025, g=9.81)       |
+| Tarifa energia         | EUR 0,20/kWh   | HarmoniQ (H1 2025)                 |
+
+================================================================================
+2. LINHA DE BASE ENERGETICA
+================================================================================
+
+| Metrica                        | Valor                  |
+|--------------------------------|------------------------|
+| Consumo anual                  | 87600 kWh/ano         |
+| Custo anual eletricidade       | EUR 17,520/ano        |
+| Custo especifico energia       | EUR 17.52/kg         |
+| Custo especifico (BRL)         | R$ 96.36/kg          |
+| TCO reportado (Waternet/Tauw)  | EUR 76.45/kg           |
+| Parcela energia no TCO         | 22.9%                |
+
+Nota: O custo de EUR 17.52/kg refere-se APENAS a eletricidade.
+O TCO completo (CAPEX + OPEX + manutencao em 10 anos) e EUR 76.45/kg.
+
+================================================================================
+3. DESCOBERTA: INCOMPATIBILIDADE DE ESCALA (REFORCADA)
+================================================================================
+
+O modelo parametrico do dashboard foi calibrado com barreiras de grande porte,
+cuja vazao de ar tipica e da ordem de centenas de m3/h por metro de cortina
+(Q50 = 400.0 m3/h/m no modelo original).
+
+Com a batimetria real de 2.77 m, a pressao hidrostatica na cortina e de
+27.85 kPa (11% maior que a premissa de 2.5 m). Aplicando engenharia
+reversa a potencia de 10 kW:
+
+  Vazao estimada: 12 a 18 m3/h/m
+  Q50 recalibrado: 421 m3/h/m
+  Razao operacional: 0.0279 a 0.0429
+
+>>> A vazao real esta UMA ORDEM DE GRANDEZA abaixo do Q50.
+
+Isso NAO significa que a barreira e ineficiente. Significa que o modelo publico
+NAO foi feito para a escala de Westerdok - e que a curva real de eficiencia
+vs. vazao da instalacao e um dado que so a TGBB possui.
+
+COM A BATIMETRIA REAL, a discrepancia e MAIOR do que estimada antes, o que
+REFORCA o potencial de otimizacao.
+
+================================================================================
+4. POTENCIAL DE ECONOMIA (RECALCULADO)
+================================================================================
+
+Cenario        | Reducao vazao | Reducao potencia | Economia EUR/ano | Economia BRL/ano
+---------------|---------------|------------------|------------------|------------------
+Conservador    | -10%          | ~8%              | EUR 2,561        | R$ 14,086
+Moderado       | -15%          | ~12%             | EUR 3,790        | R$ 20,846
+Otimista       | -20%          | ~15%             | EUR 4,984        | R$ 27,410
+
+Faixas pressupoem que a reducao de vazao NAO comprometa a eficiencia de
+captura - o que so pode ser confirmado com a curva real de eficiencia vs. Qa.
+
+================================================================================
+5. TRES PERGUNTAS QUE SO A TGBB PODE RESPONDER
+================================================================================
+
+1. Qual e a vazao de ar real (Qa) por metro de cortina em Westerdok?
+   (medida ou de projeto)
+
+2. A curva potencia x vazao do compressor coincide com a de placa?
+   (ou ha desvio por desgaste, contrapressao ou entupimento de difusores?)
+
+3. A profundidade local varia com a mare?
+   (e em quanto isso desloca o ponto otimo?)
+
+Se qualquer uma dessas respostas surpreender, ha economia a capturar sem
+perda de eficiencia de captura.
+
+================================================================================
+6. PROPOSTA: CAMPANHA DE MEDICAO LEVE (TIER 1)
+================================================================================
+
+Com 1 semana de medicao leve (potencia, vazao, pressao), e possivel transformar
+estas estimativas em numeros verificaveis, com incerteza declarada e
+conformidade com ISO 50015 / IPMVP Opcao B.
+
+Sem instrumentacao permanente, sem NDA para esta etapa, sem compromisso de
+continuidade.
+
+================================================================================
+7. REFERENCIAS
+================================================================================
+
+- Rodrigues, M. F.; Rosman, P. C. C.; Silva, R. A. G. (2026). Avaliacao do
+  Transporte e da Dispersao de Microplasticos... III FluHidros e X VII ENES.
+
+- Rosman, A. A. C.; Rosman, P. C. C.; Carreira, R. (2024). Deriva de
+  Microplasticos Leves Oriundos dos Emissarios de Ipanema e Icarai...
+
+- Carvalho, G. A.; Cabral, A. P.; Fernandez, M. A. S. (2003). Correlacao entre
+  o campo de vento medio e um indice que define a intensidade da ressurgencia
+  na regiao do Cabo Frio. Anais XI SBSR, p. 1509-1514.
+
+- PDOK - Publieke Dienstverlening Op de Kaart (Kadaster, Holanda).
+  https://www.pdok.nl/
+
+- Amsterdam Open Geodata. https://maps.amsterdam.nl/open_geodata/
+
+- Waternet/Tauw (2023). Relatorio de monitoramento Westerdok.
+
+- TGBB (2024). Dados operacionais da barreira Westerdok.
+
+- HarmoniQ (2025). Tarifa industrial de energia, H1 2025.
+
+================================================================================
+FIM DO RELATORIO
+================================================================================

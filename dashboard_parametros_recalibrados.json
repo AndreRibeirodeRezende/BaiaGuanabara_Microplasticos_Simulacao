@@ -1,0 +1,40 @@
+{
+  "versao": "2.0 - com batimetria real",
+  "data_atualizacao": "2026-11-26T15:47:03.887563",
+  "fonte_batimetria": "PDOK / Amsterdam Open Geodata (fallback publico)",
+  "parametros_fisicos": {
+    "profundidade_m_NAP": 2.77,
+    "profundidade_anterior_m": 2.5,
+    "pressao_hidrostatica_kPa": 27.85,
+    "comprimento_cortina_m": 60.0,
+    "potencia_compressor_kW": 10.0,
+    "eficiencia_maxima": 0.86,
+    "captura_anual_kg": 1000.0,
+    "tarifa_EUR_kWh": 0.2
+  },
+  "curva_hill_recalibrada": {
+    "Q50_m3_h_m": 421.0,
+    "Qcrit_m3_h_m": 842.0,
+    "expoente_n": 2.0,
+    "Q50_anterior": 400.0,
+    "fator_escalamento": 1.053
+  },
+  "vazao_ar_estimada": {
+    "min_m3_h_m": 11.7,
+    "max_m3_h_m": 18.1,
+    "fator_correcao_pressao": 0.903,
+    "razao_com_Q50": "0.0279 a 0.0429"
+  },
+  "linha_base_energetica": {
+    "consumo_anual_kWh": 87600.0,
+    "custo_anual_EUR": 17520.0,
+    "custo_anual_BRL": 96360.0,
+    "custo_especifico_EUR_kg": 17.52,
+    "custo_especifico_BRL_kg": 96.36
+  },
+  "economia_potencial_EUR_ano": {
+    "reducao_10pct": 2561.0,
+    "reducao_15pct": 3790.0,
+    "reducao_20pct": 4984.0
+  }
+}
